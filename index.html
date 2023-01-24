@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>LeudyRN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400&family=Oleo+Script&family=Raleway:ital,wght@0,400;0,700;0,900;1,300;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" href="img/galaxia.png">
+
+    </head>
+
+    <body>
+        <div class="hero">
+            <nav>
+                <h2 class="logo">Leudy <span>Randy Nolasco</span></h2>
+                <ul>
+                    <li> <a href="#home" onclick="showSection('home'); startBreeze()">Home</a></li>
+                    <li> <a href="#about" onclick="showSection('about'); startBreeze()">About Me</a></li>
+                    <li> <a href="#training" onclick="showSection('training'); startBreeze()">Training</a></li>
+                    <li> <a href="#portafolio" onclick="showSection('portafolio'); startBreeze()">Portafolio</a></li>
+                    <li> <a href="#contact" onclick="showSection('contact'); startBreeze()">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+        <section id="home" class="section home-section">
+            <h1 class= "h">Bienvenido <span>a mi sitio web</span></h1>
+            <br>
+            <p class="mip">Este es mi sitio web personal donde puedes encontrar información sobre mí, mi capacitacion y mi portafolio.</p>
+          </section>
+
+
+        <section id="about" class="section about-section">
+            <h2 class= "a">Sobre <span>Mi</span></h2>
+            <br>
+            <p class="mip">Me llamo Leudy Randy Nolasco, Soy de la Republica Dominicana Santo Domingo,actualmente soy estudiante de Licenciatura en Informatica en la Universidad
+              Autonoma de Santo Domingo, siempre me matengo capacitandome haciendo cursos y diplomados. Me gusta dibujar en mis tiempos libres 
+              asi como tambien leer (manga) o ver (anime), soy una persona muy creativa, trabajadora y con ambicion de seguir superandose dia tras dia.</p>
+
+        </section>
+
+        <section id="training" class="section training-section">
+
+          <h2 class="t">Trai<span>ning</span></h2>
+          <br><br>
+          <div class="image-container">
+            <img src="img/2.png" alt="Logo de mi sitio web">
+            <img src="img/3.png" alt="Logo de mi sitio web">
+            <img src="img/4.png" alt="Logo de mi sitio web">
+            <img src="img/5.png" alt="Logo de mi sitio web">
+            <img src="img/6.png" alt="Logo de mi sitio web">
+            <img src="img/7.png" alt="Logo de mi sitio web">
+          </div>
+          <br><br><br><br>
+        <div class="container">
+
+          <a href="Certicacion.pdf" download target="_blank" class="download-button">Ver Capacitacion</a>
+          <a href="leu.pdf" download target="_blank" class="download-button23">Descargar CV</a>
+        </div>
+        </section>
+
+
+        <section id="portafolio" class="section portafolio-section">
+         <h2 class="p">Porta<span>folio</span></h2>
+         <br>
+
+         <p class="mip">En este apartado se encuentran los proyectos y practicas que he realizado en el transcuso de mi tiempo
+          programando, proyectos de distinta indole.
+         </p>
+         <br><br>
+         <a href="https://github.com/LeudyRN?tab=repositories" download target="_blank" class="download-button">Ver Portafolio</a>
+        </section>
+
+        <section id="contact" class="section contact-section">
+          <h2 class="c">Con<span>tact</span></h2>
+          <br>
+          <p class="mip">Aqui estan mis redes sociales para contactarme!</p>
+        <br><br>
+
+        <a href="https://www.facebook.com/leudirandi.nolasco" download target="_blank" class="download-button">FACEBOOK</a>
+        <a href="http://wa.me/+18293343632" download target="_blank" class="download-button23">WHATSAPP</a>
+        <a href="https://www.instagram.com/leudyrn/" download target="_blank" class="download-button">INSTAGRAM</a>
+
+        </section>
+        <script>
+            
+            function createStar() {
+              
+              const star = document.createElement('div');
+              
+              star.classList.add('star');
+            
+              star.style.left = `${Math.random() * 90}%`;
+              star.style.top = `${Math.random() * 90}%`;
+              
+              document.body.appendChild(star);
+
+              const animation = star.animate([
+                { transform: 'translateY(0px)' },
+                { transform: 'translateY(100%)' }
+              ], {
+                duration: Math.random() * 2000 + 2000,
+                fill: 'forwards'
+              });
+   
+              animation.onfinish = () => {
+                star.remove();
+              }
+            }
+            
+            setInterval(createStar, 300);
+          </script>
+
+     <script>
+       function showSection(sectionId) {
+
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+  
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.style.display = 'block';
+    }
+     </script>
+
+    
+
+    
+    </body>
+</html>
